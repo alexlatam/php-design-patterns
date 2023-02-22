@@ -12,13 +12,12 @@ require __DIR__ . '/vendor/autoload.php';
 function RandomFactory(SimpleFactory $factory) {
 
     // Creamos un objeto de la clase Car
-    $pants = $factory::createNewPants();
+    $vehicle = $factory::createNewCar();
 
     // Ahora llamamos a los metodos de cada objeto
-    echo $pants->getColor() . "\n";
-    echo $pants->getPrice() . "\n";
-    echo $pants->getQuantity() . "\n";
-    echo $pants->getBrand() . "\n";
+    echo $vehicle->getColor() . "\n";
+    echo $vehicle->getModel() . "\n";
+    echo $vehicle->getBrand() . "\n";
 
 }
 
