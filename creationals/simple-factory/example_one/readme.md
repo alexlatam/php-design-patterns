@@ -23,3 +23,9 @@ SimpleFactory.php
 
 En el archivo index.php estamos creando cada vehiculo, usando la Facbrica Simple!
 
+
+### Ejecucion del codigo
+En la carpeta del ejemplo ejecutar el siguiente comando
+```php
+php index.php
+```

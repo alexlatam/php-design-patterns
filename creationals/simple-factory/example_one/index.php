@@ -1,32 +1,27 @@
 <?php 
 
+use SimpleFactory\SimpleFactory;
 // Importo el autoload de composer para poder usar las clases de los namespaces.
 // PAra poder usar todas las clases que se encuentran en la carpeta src
 require __DIR__ . '/vendor/autoload.php';
 
-// Ahora llamamos a la clase Factory, para crear los vehiculos a partir de la fabrica simple
+// Ahora llamamos a la clase Factory, paracrear los vehiculos a partir de la fabrica simple
 
-// Creamos un objeto de la clase Factory
-$factory = new SimpleFactory\Factory();
+// Creamos un a funcion para crear un vehiculo
+// Esta funcion recibe una fabrica como parametro
+function RandomFactory(SimpleFactory $factory) {
 
-// Creamos un objeto de la clase Car
-$car = $factory::createNewCar();
+    // Creamos un objeto de la clase Car
+    $vehicle = $factory::createNewCar();
 
-// Creamos un objeto de la clase Motorcycle
-$motorcycle = $factory::createNewMotorbike();
+    // Ahora llamamos a los metodos de cada objeto
+    echo $vehicle->getColor() . "\n";
+    echo $vehicle->getModel() . "\n";
+    echo $vehicle->getBrand() . "\n";
 
-// Creamos un objeto de la clase Truck
-$truck = $factory::createNewTruck();
+}
 
-// Ahora llamamos a los metodos de cada objeto
-$car->setColor('red');
-$car->setModel('2019');
-$car->setBrand('Toyota');
+// Llamamos a la funcion y le pasamos como parametro una fabrica
+RandomFactory(new SimpleFactory());
 
-$motorcycle->setColor('blue');
-$motorcycle->setModel('2018');
-$motorcycle->setBrand('Honda');
 
-$truck->setColor('black');
-$truck->setModel('2017');
-$truck->setBrand('Mazda');

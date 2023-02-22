@@ -11,7 +11,7 @@ use SimpleFactory\Vehicles\Truck;
 // LA calse Factory es la que se encaragara de crear cada vehiculo
 // Y como se puede ver, gracias a que se realizo la abstraccion, 
 // ahora cada metodo de creacion, debe retornar un objeto que implemente la interfaz 'VehicleInterface'
-class Factory
+class SimpleFactory
 {
     // Este metodo debe retornar un objeto que implemente la interfaz 'VehicleInterface'
     static public function createNewCar(): VehicleInterface
